@@ -1,0 +1,21 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "msg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "myinputqueue",
+      "connection": "AppFunctionServiceBus_SERVICEBUS"
+    },
+    {
+      "name": "documents",
+      "type": "cosmosDB",
+      "databaseName": "Customer",
+      "collectionName": "data",
+      "connectionStringSetting": "AzureWebJobsCosmosDB",
+      "direction": "out",
+      "createIfNotExists": true
+    }
+  ]
+}
